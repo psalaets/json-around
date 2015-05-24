@@ -1,9 +1,9 @@
 var through = require('through2');
 
 module.exports = function jsonAround(arrayPropertyName, wrapperObject) {
-  var json = JSON.stringify(wrapperObject);
+  var wrapperJson = toJson(wrapperObject);
 
-  var openObject = json.slice(0, -1);
+  var openObject = wrapperJson.slice(0, -1);
   var openArray = ',"' + arrayPropertyName + '":[';
 
   var previousChunkAsJson;
