@@ -1,7 +1,7 @@
 {
   "name": "json-around",
   "version": "1.0.0",
-  "description": "Turn object stream into a json array, with json object around it",
+  "description": "Put a JSON string around an object stream",
   "main": "index.js",
   "scripts": {
     "test": "node test.js"

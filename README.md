@@ -1,6 +1,6 @@
 # json-around
 
-Turn object stream into a json array, with json object around it.
+Put a JSON string around an object stream.
 
 ## Example
 
