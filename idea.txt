@@ -1,0 +1,23 @@
+
+var objects  = ...
+
+objects.pipe(jsonAround('items', {
+  name: 'foo',
+  blah: 5
+}))
+.pipe(process.stdout)
+
+objects.write(1)
+objects.write(2)
+objects.end(3)
+
+stdout gets:
+
+{
+  name: 'foo',
+  blah: 5,
+  items: [1, 2, 3]
+}
+
+everything including first element of array is written as soon as first data chunk
+comes in. Once last data chunk comes in array is closed and rest of object is written/closed.

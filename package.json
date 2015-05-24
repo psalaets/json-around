@@ -1,0 +1,25 @@
+{
+  "name": "json-around",
+  "version": "1.0.0",
+  "description": "Turn object stream into a json array, with json object around it",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "json",
+    "array",
+    "around",
+    "object",
+    "stream",
+    "wrap"
+  ],
+  "author": "Paul Salaets <psalaets@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "tape": "^4.0.0"
+  },
+  "dependencies": {
+    "through2": "^0.6.5"
+  }
+}
