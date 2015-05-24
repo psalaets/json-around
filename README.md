@@ -30,6 +30,7 @@ stdout will (roughly) get
   "location": "farm",
   "animals": [
     {"name":"horse"},
+    {"name":"dog"},
     {"name":"cow"}
   ]
 }
@@ -43,6 +44,10 @@ and it would have been streamed in chunks like
 
 ```
 {"name":"horse"},
+```
+
+```
+{"name":"dog"},
 ```
 
 ```
