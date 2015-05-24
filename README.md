@@ -59,15 +59,15 @@ and it would have been streamed in chunks like
 
 ### jsonAround(arrayPropertyName, wrapperObject)
 
-#### param: arrayPropertyName
+#### arrayPropertyName
 
 String to use for the array's key in resulting JSON.
 
-#### param: wrapperObject
+#### wrapperObject
 
 Object that will be converted to JSON and have array added to it.
 
-#### returns: through stream
+#### returns a through stream
 
 Objects piped in will become elements of the array.
 
