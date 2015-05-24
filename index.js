@@ -6,24 +6,28 @@ module.exports = function jsonAround(arrayPropertyName, wrapperObject) {
   var openObject = json.slice(0, -1);
   var openArray = ',"' + arrayPropertyName + '":[';
 
-  var previousChunk;
+  var previousChunkAsJson;
 
   return through.obj(function transform(chunk, enc, cb) {
     // this is first chunk
-    if (typeof previousChunk == 'undefined') {
+    if (typeof previousChunkAsJson == 'undefined') {
       // write first part of wrapper object and start array
       this.push(openObject + openArray);
     } else {
       // somewhere in middle of array
-      this.push(toJson(previousChunk) + ',');
+      this.push(previousChunkAsJson + ',');
     }
 
-    previousChunk = chunk;
+    try {
+      previousChunkAsJson = toJson(chunk);
+    } catch (error) {
+      return cb(error);
+    }
 
     cb();
   }, function end(cb) {
     // write final array element, close array, close object
-    this.push(toJson(previousChunk) + ']}');
+    this.push(previousChunkAsJson + ']}');
     cb();
   });
 };

@@ -135,3 +135,24 @@ test('respects custom json representations', function(t) {
     t.end();
   }
 });
+
+test('emits error on json failures', function(t) {
+  t.plan(1);
+
+  var source = through.obj();
+  var ja = jsonAround('items', {
+    color: 'red'
+  });
+
+  ja.on('error', function(e) {
+    t.equal(e.message, 'thrown from toJSON');
+  });
+
+  source.pipe(ja);
+
+  source.end({
+    toJSON: function() {
+      throw new Error('thrown from toJSON');
+    }
+  });
+});
