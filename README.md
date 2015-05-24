@@ -18,8 +18,9 @@ source
   }))
   .pipe(process.stdout);
 
-source.write({"name":"horse"});
-source.write({"name":"cow"});
+source.write({name: 'horse'});
+source.write({name: 'dog'});
+source.write({name: 'cow'});
 source.end();
 ```
 
