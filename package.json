@@ -8,14 +8,19 @@
   },
   "keywords": [
     "json",
-    "array",
     "around",
     "object",
     "stream",
+    "array",
     "wrap"
   ],
   "author": "Paul Salaets <psalaets@gmail.com>",
   "license": "MIT",
+  "homepage": "https://github.com/psalaets/json-around",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/psalaets/json-around.git"
+  },
   "devDependencies": {
     "tape": "^4.0.0"
   },
